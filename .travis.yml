@@ -19,4 +19,16 @@ after_success:
   - docker push m0arcin/multi-client
   - docker push m0arcin/multi-nginx
   - docker push m0arcin/multi-server
-  - docker push m0arcin/multi-worker
+  - docker push m0arcin/multi-
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-398910354857
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
