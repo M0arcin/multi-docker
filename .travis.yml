@@ -19,7 +19,7 @@ after_success:
   - docker push m0arcin/multi-client
   - docker push m0arcin/multi-nginx
   - docker push m0arcin/multi-server
-  - docker push m0arcin/multi-
+  - docker push m0arcin/multi-worker
 deploy:
   edge: true
   provider: elasticbeanstalk
